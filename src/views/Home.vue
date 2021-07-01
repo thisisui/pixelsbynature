@@ -7,43 +7,20 @@
     </section>
     <section class="box">
       <h3 class="box__title">Projects</h3>
-      <div class="card card--decorated">
-        <h3 class="card__title">Atlas of Medicinal plants</h3>
-        <div class="card__hero">
-          <img
-            class="card__hero-image"
-            src="@/assets/medical-plants.jpg"
-            alt="Medical plants promo banner"
-          />
-        </div>
-        <p class="card__description">
-          Free mobile application for Android where I've gathered 371 medicinal
-          plants. It lists active substances and usage of each of the plant.
-        </p>
-        <ul class="card__tags">
-          <li class="card__tag">React Native</li>
-          <li class="card__tag">Redux</li>
-        </ul>
-      </div>
-      <div class="card card--decorated">
-        <h3 class="card__title">Homie The Game</h3>
-        <div class="card__hero">
-          <img
-            class="card__hero-image"
-            src="@/assets/homie-the-game.jpg"
-            alt=""
-          />
-        </div>
-        <p class="card__description">
-          Unity game about a average boy who needs to save his neighbourhood
-          againts big corporation. (not live yet)
-        </p>
-        <ul class="card__tags">
-          <li class="card__tag">Unity</li>
-          <li class="card__tag">Aseprite</li>
-          <li class="card__tag">Pixel Studio Pro</li>
-        </ul>
-      </div>
+      <Card
+        title="Atlas of Medicinal plants"
+        imagePath="medical-plants.jpg"
+        description="Free mobile application for Android where I've gathered 371 medicinal
+          plants. It lists active substances and usage of each of the plant."
+        :tags="['React Native', 'Redux']"
+      />
+      <Card
+        title="Homie The Game"
+        imagePath="homie-the-game.jpg"
+        description="Unity game about a average boy who needs to save his neighbourhood againts
+      big corporation. (not live yet)"
+        :tags="['Unity', 'Aseprite', 'Pixel Studio Pro']"
+      />
     </section>
     <section class="footer">
       <ul class="footer__menu">
@@ -61,9 +38,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Card from "@/components/Card.vue";
 
 export default defineComponent({
   name: "Home",
+  components: { Card },
 });
 </script>
 
@@ -122,64 +101,12 @@ export default defineComponent({
   flex-wrap: wrap;
 
   &__title {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100% - 40px);
     margin: 0 20px 20px;
   }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-  }
-}
-
-.card {
-  text-align: left;
-  border: 1px solid $secondary-color;
-  padding: 20px;
-  flex: 1;
-  margin: 0 20px 20px;
-  // cursor: pointer;
-
-  &--decorated {
-    border-top: 4px solid $primary-color;
-    will-change: border-top-color;
-    transition: border-top-color 0.5s ease;
-
-    &:hover {
-      border-top-color: $primary-color-accent;
-    }
-  }
-
-  &__hero {
-    margin-bottom: 20px;
-  }
-
-  &__hero-image {
-    width: 100%;
-    outline: 3px dotted $secondary-color;
-  }
-
-  &__tags {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__tag {
-    border: 1px solid $secondary-color;
-    padding: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-
-  &__title {
-    margin-top: 0;
-  }
-
-  &__description {
-    margin: 0 0 20px;
-    line-height: 32px;
   }
 }
 
@@ -200,26 +127,26 @@ export default defineComponent({
       text-decoration: dotted;
     }
   }
+}
 
-  @keyframes glitch {
-    0% {
-      transform: translate(0);
-    }
-    20% {
-      transform: translate(-5px, 5px);
-    }
-    40% {
-      transform: translate(-5px, -5px);
-    }
-    60% {
-      transform: translate(5px, 5px);
-    }
-    80% {
-      transform: translate(5px, -5px);
-    }
-    to {
-      transform: translate(0);
-    }
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
   }
 }
 </style>
