@@ -3,6 +3,8 @@
 </template>
 
 <style lang="scss">
+@import "@/styles/_colors";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12,5 +14,6 @@
 
 body {
   margin: 0;
+  background-color: $primary-color-accent;
 }
 </style>

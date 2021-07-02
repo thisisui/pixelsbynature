@@ -75,7 +75,7 @@ export default defineComponent({
   &__tags {
     list-style: none;
     padding: 0;
-    margin-top: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
   }

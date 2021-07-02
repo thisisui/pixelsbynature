@@ -50,9 +50,10 @@ export default defineComponent({
 @import "@/styles/_colors";
 
 .hero {
-  margin: 40px 0 20px;
+  padding: 40px 0 20px;
   text-align: right;
   position: relative;
+  background: #fff;
 
   &__title {
     text-decoration: none;
@@ -99,6 +100,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background: #fff;
 
   &__title {
     flex: 0 0 calc(100% - 40px);
@@ -113,9 +115,11 @@ export default defineComponent({
 .footer {
   background: $primary-color-accent;
   padding: 20px 0;
+  text-align: center;
 
   &__menu {
     margin: 0;
+    padding: 0;
     list-style: none;
   }
 
